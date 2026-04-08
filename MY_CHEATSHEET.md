@@ -116,3 +116,61 @@ Git не может сам решить, какую версию файла ос
 ```bash
 git pull origin main   # правильно (откуда, что)
 git pull main origin   # ошибка
+
+# Пробелы
+## Инструменты: терминал, окружения, CSV
+
+### Команды терминала (bash / Git Bash)
+
+| Команда | Что делает | Пример |
+|---------|-----------|--------|
+| `pwd` | показать текущую папку | `pwd` → `/c/Users/Azerty` |
+| `ls` | показать список файлов | `ls` → `README.md` |
+| `cd <folder>` | перейти в папку | `cd Desktop` |
+| `cd ..` | перейти на уровень выше | — |
+| `cd ~` | перейти в домашнюю папку | — |
+| `echo "text"` | напечатать текст | `echo "Привет"` |
+
+### Флаги команд (опции)
+
+| Флаг | Что значит | Пример |
+|------|-----------|--------|
+| `-m` | module (запустить модуль) | `python -m venv .venv` |
+| `-r` | requirements (файл с библиотеками) | `pip install -r requirements.txt` |
+| `-v` | verbose (подробный вывод) | `python script.py -v` |
+| `-h` / `--help` | help (справка) | `pip install -h` |
+| `--version` | версия программы | `python --version` |
+
+### Перенаправление вывода
+
+| Символ | Что делает | Пример |
+|--------|-----------|--------|
+| `>` | записать вывод в файл (перезаписать) | `pip freeze > requirements.txt` |
+| `>>` | добавить вывод в конец файла | `echo "new line" >> file.txt` |
+
+### Виртуальные окружения (venv)
+
+```bash
+python -m venv .venv        # создать окружение
+.venv\Scripts\activate      # активировать (Windows)
+source .venv/bin/activate   # активировать (Linux/macOS)
+deactivate                  # выйти из окружения
+
+
+### csv-файлы
+csv.reader — читает строки как списки:
+import csv
+with open('data.csv', 'r') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)  # ['name', 'age', 'city']
+                    # ['Алексей', '18', 'Москва']
+
+csv.DictReader — читает строки как словари (первая строка — ключи):
+import csv
+with open('data.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        print(row['name'], row['age'])  # Алексей 18
+
+        
