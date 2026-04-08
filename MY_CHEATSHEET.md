@@ -118,6 +118,21 @@ Git не может сам решить, какую версию файла ос
 git pull origin main   # правильно (откуда, что)
 git pull main origin   # ошибка
 ```
+### Работа с venv (правильный порядок)
+
+```bash
+# Создать окружение
+python -m venv .venv
+
+# Активировать (Git Bash)
+source .venv/Scripts/activate   # или . .venv/Scripts/activate
+
+# Проверить, что активация сработала
+which python   # должен показывать путь внутри .venv
+
+# Выйти из окружения
+deactivate
+```
 # Пробелы
 ## Инструменты: терминал, окружения, CSV
 
