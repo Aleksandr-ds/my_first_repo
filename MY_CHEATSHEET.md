@@ -81,6 +81,7 @@ git pull origin main        # скачать изменения с GitHub
 git remote -v               # посмотреть удаленные репозитории
 git log --oneline           # краткая история коммитов
 git status                  # что изменилось с последнего коммита
+```
 
 ## Git: конфликты и их разрешение
 
@@ -116,7 +117,7 @@ Git не может сам решить, какую версию файла ос
 ```bash
 git pull origin main   # правильно (откуда, что)
 git pull main origin   # ошибка
-
+```
 # Пробелы
 ## Инструменты: терминал, окружения, CSV
 
@@ -155,22 +156,25 @@ python -m venv .venv        # создать окружение
 .venv\Scripts\activate      # активировать (Windows)
 source .venv/bin/activate   # активировать (Linux/macOS)
 deactivate                  # выйти из окружения
-
+```
 
 ### csv-файлы
 csv.reader — читает строки как списки:
+```bash
 import csv
 with open('data.csv', 'r') as f:
     reader = csv.reader(f)
     for row in reader:
         print(row)  # ['name', 'age', 'city']
                     # ['Алексей', '18', 'Москва']
+```
 
 csv.DictReader — читает строки как словари (первая строка — ключи):
+```bash
 import csv
 with open('data.csv', 'r') as f:
     reader = csv.DictReader(f)
     for row in reader:
         print(row['name'], row['age'])  # Алексей 18
-
+```
         
